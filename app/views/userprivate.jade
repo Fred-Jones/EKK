@@ -1,0 +1,23 @@
+extends layout
+block css
+  link(href='css/index.css')
+  link(href='css/userprivate.css')
+block content
+  .pageOne(ng-app='pageApp')
+    .inner
+    .user(ng-controller='profileController')
+        if username
+          .profpic
+            img(id='profpic' src='img/Vicente.jpg') 
+          .username Username: #{username}
+          .email Email: #{email}
+            p.fineprint This page only visible to the user
+          .tagline 
+        else 
+          
+block body_scripts
+  script(src='components/underscore/underscore-min.js')
+  script(src='components/jquery/dist/jquery.min.js')
+  script(src='js/jq/uuser/blizzapi.js')
+  script(src='js/jq/uuser/testblizzapi.js')
+  script(src='js/jq/uuser/uuser.js')

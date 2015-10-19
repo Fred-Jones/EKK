@@ -1,0 +1,15 @@
+extends layout
+block css
+  link(href='css/signup.css' rel='stylesheet')
+block content
+  .signup.jubotron.text-center
+    h1:span.fa.fa-lock Signup
+  form(action='/signup' method='POST') 
+    input(name='authtype' type='text' value='local')
+    input(id='username' name='username' type='text' placeholder='username')
+    input(id='password' name='password' type='text' placeholder='password')
+    input(id='email' name='email' type='text' placeholder='email')
+    //- user.js /signup route leaves profile: optional
+    //- profile: {tagline: String} 
+    input(id='submitButton' type='submit' text='Submit')
+  script(src='//code.jquery.com/jquery-2.1.4.min.js')

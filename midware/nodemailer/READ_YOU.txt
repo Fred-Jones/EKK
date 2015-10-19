@@ -1,0 +1,1 @@
+Send and email to config.admin.email when someone signs up

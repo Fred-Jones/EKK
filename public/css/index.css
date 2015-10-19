@@ -1,0 +1,46 @@
+/*
+      Ustedes saben kien soyyo
+    el de los ticket y la perra
+            montao
+*/
+@media screen and (max-width: 500px) {
+  a {
+    color: blue;
+
+  }
+}
+body {
+  color: black;
+  }
+.pageOne {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  border: 2px solid blue;
+
+}
+
+.inner {
+  height: 20vh;
+  width: 90vw;
+  border: 2px dotted red;
+}
+.btn {
+  padding: 20px;
+  border: 2px solid gray;
+}
+#enter {
+
+}
+#login {
+
+}
+
+#stats {
+  width: 89.5%;
+  height: 69%;
+  border: 2px dotted blue;
+
+}

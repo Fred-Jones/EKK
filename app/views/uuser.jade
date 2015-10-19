@@ -1,0 +1,41 @@
+//-SHOULD HAVE user.private.jade and user.public.jade
+extends layout
+block css
+  link(href='css/user.css')
+block content
+  .page(ng-app='pageApp')
+    .user(ng-controller='profileController')
+      img(id='profpic' src='http://placehold.it/150x350') 
+      .user Uuser
+        .username.
+          username
+        .tagline.
+          enilgaT
+      .mystats.
+        mystats box
+      .genstat.
+        general blizzard api query
+      .mywagers
+        //- bootstrap form in note
+        //- bootstrap dropdown menu in note
+        form(role='form' action='/test_wager' method='POST') 
+          input(name='gametype' type='text' value='wow' placeholder='Select Game')
+          input(name='gametype' type='text' value='wow')
+          //- enter password to confirm submission
+          input(id='password' name='password' type='text' placeholder='password')
+          //- prevent default -> prompt are you sure? -> success
+          input(id='submitButton' type='submit' text='Submit')
+      .chat.
+        chat modal
+    .statbox.
+      api rankings here .stats_api
+      
+block body_scripts
+  script(src='components/underscore/underscore-min.js')
+  script(src='components/jquery/dist/jquery.min.js')
+  //- script(src='js/jq/uuser/uuser.js')  
+  //- script(src='js/jq/uuser/ggenstat.js')
+  //- script(src='js/jq/uuser/ggenstat2.js')
+  script(src='js/jq/uuser/blizzapi.js')
+  script(src='js/jq/uuser/testblizzapi.js')
+  script(src='js/jq/uuser/uuser.js')
