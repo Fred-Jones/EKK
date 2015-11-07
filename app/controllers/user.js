@@ -11,20 +11,21 @@
 var User = require('../models/user.js')
 module.exports = function (app) {
   app.get('/user', app.isAuthenticated, function(req, res, next) {
-    console.log('/user ', req.user)
-    res.render('userprivate', req.user)
+    var usr = req.user
+    console.log('/user ', usr)
+    res.render('userprivate', usr)
   })
   app.post('/user', function(req, res) {
-    res.send('posted user')
+    res.send('posted /user')
   })
-  app.get('/signup', function(req, res, next) {
-    res.render('signup')
-  })
-  app.post('/signup', signup);
+  // app.get('/signup', function(req, res, next) {
+  //   res.render('signup')
+  // })
+  // app.post('/signup', signup);
   //handle the case that a logged in user requests their own prof page
-  app.get('/user/:user', function(req, res, next) {
+  app.get('/user/:user', app.isAuthenticated, function(req, res, next) {
     if(req.params.user == req.user.username) {
-      res.redirect('/user')
+      res.render('userprivate', req.user)
     }else {
       res.render('userpublic', __getUserObject(req))
     }
@@ -44,6 +45,8 @@ function signup(req, res, next) {
    }
    if(!err && !user) {
      console.log('New user')
+     // need to update to reflect changes to user.js model
+     // include defauilt values for new users
      var newUser = new User({
        username: req.body.username,
        password: req.body.password,
@@ -57,12 +60,4 @@ function signup(req, res, next) {
    }
 
  })
-}
-
-function __getUserObject(r) {
-  r = r.body.user
-  return {
-    username: r.username || 'error r.username',
-    tagline: r.tagline || 'error r.username'
-  }
 }

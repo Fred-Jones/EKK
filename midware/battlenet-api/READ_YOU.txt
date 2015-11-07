@@ -1,0 +1,3 @@
+//should make a midware that is callable with query parameters
+//passed by the user in req.body
+

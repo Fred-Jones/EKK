@@ -1,8 +1,8 @@
-
 extends layout
 block css
   link(href='css/login.css' rel='stylesheet')
 block content
+  a(href='/') Go Back
   h1 Login
   form(action='/login' method='POST') 
     input(name='authtype' type='text' value='local')

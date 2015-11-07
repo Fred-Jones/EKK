@@ -1,35 +1,39 @@
 // IDEA
+//      web-socket
+//      realtime betting
 //      send spinner from server to client, ajax on client side for blizzard
 //      query on index.jade
 //^      create data polling system using socket.io
+//      MLG.tv for streaming
 //      consider wager flow: select game -> staging -> commit -> success
 //        you will be notified of win/loss in your messages
 //        email option
 //      nodemailer confirm signup
 //      redis wager db
 // TODO
-//      cleanup
-//        public/js && config && app/views
-//^      user.public.jade && user.private.jade
-//      setup general blizzard_frontend on index.jade
+//      Probably going to have to scrape lolesports.com
+//      http://matchhistory.na.leagueoflegends.com/en/#match-details/FRA1TMNT1/390112?gameHash=2006b43895063726&tab=overview
+//      Get riot games api-key
+//      make adding a game by admin accessible through a function
+//      setup blizzard_api
+//      setup game api and game db
+//      because of ratelimits, must host data pertainging to a game locally
+//      if the user is not logged in but navigating the site, should present signup link
+//      change file names there are like 10 user.js files
+//        never do that crap again
 //      finish socket
+//        socket is flimsy af with connections. HTTP better for homepage. Connect socket after user logs in
+//        just make socket a chat
 //      csurf needed? see note
 //      bcrypt passwords
 //      adding a game should be accessible by admin from browser
 //        ssl?
 //          ansible
-//        @ppm on heroku for ssl, they are not cool with backdoors dont try
-//      attach genHash and compare methods to User model
-//          maybe not such a good idea
+//        ppm on heroku for ssl, they are not cool with backdoors dont try
 //      ??move strategies.js to midware/passport ??
 //      finish setup paypal_api
-//      setup wager db
-//      setup wager logic start with simple form, authenticate, etc
-//        list of matches
-//        create new match
-//        place bet
-//        my wagers
-//      setup blizzard_api
+//      ^setup wager db
+//        no more wagers, just games
 //      https
 //        check note
 //      setup image hosting gridfs
@@ -41,28 +45,35 @@
 //
 //      PUSH HEROKU
 //      sick frontend
-//      bitcoin_payment
 //      adds?
 //
 
 var express = require('express'),
   config = require('./config/config'),
   glob = require('glob'),
-  mongoose = require('mongoose');
-mongoose.connect(config.db);//should change config[env].db?
-var db = mongoose.connection;//multiple dbs?
+  mongoose = require('mongoose')
+mongoose.connect(config.db)
+var db = mongoose.connection;32
 db.on('error', function () {
-  throw new Error('unable to connect to database at ' + config.db);
-});
-var models = glob.sync(config.root + '/app/models/*.js');
+  throw new Error('unable to connect to database at ' + config.db)
+})
+var models = glob.sync(config.root + '/app/models/*.js')
 models.forEach(function (model) {
-  require(model);
-});
-var app = express();
-require('./config/express')(app, config);
+  require(model)
+})
+var app = express()
+require('./config/express')(app, config)
 // app.listen(config.port);
 // // called in sock
 var sock = require('./midware/io/socket_test.js')(app, config)
+
+
+//DB SEEDS
+// var game = new Object()
+// game.opts = {}
+// game.semila = require('./app/models/game.semilla.js')()
+
+
 
 /* mucho brillo mucho flow mucha torta
 

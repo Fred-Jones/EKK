@@ -12,4 +12,6 @@ block content
     //- user.js /signup route leaves profile: optional
     //- profile: {tagline: String} 
     input(id='submitButton' type='submit' text='Submit')
+  if error
+    h1 #{error_message}
   script(src='//code.jquery.com/jquery-2.1.4.min.js')

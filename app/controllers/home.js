@@ -8,3 +8,8 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
   res.render('index')
 });
+
+router.get('/atrium', function (req, res, next) {
+  // will be general about page for the public
+  res.render('atrium')
+})

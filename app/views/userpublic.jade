@@ -5,9 +5,9 @@ block css
 block content
   .page(ng-app='pageApp')
     .user(ng-controller='profileController')
-      img(id='profpic' src='img/Vicente.jpg') 
+      img(id='profpic' src=/*#{profpic.url}*/'img/Vicente.jpg') 
       .user 
-      -if user
+      if user
         .username.
           #{username}
         .tagline.

@@ -1,7 +1,6 @@
 var passport = require('passport');
 var User = require('../app/models/user.js')
-var userSemilla = require('../app/models/user.semilla.js')('ElDon', 'LaContrasena', 'mmaammbbuu@gmail.com')
-var bc = require('../midware/bcrypt/bcrypt.js')
+// var userSemilla = require('../app/models/user.semilla.js')('ElDon', 'LaContrasena', 'mmaammbbuu@gmail.com')
 var strategies = require('./strategies.js')
 strategies.forEach(function(s) { passport.use(s.name, s);})
 passport.serializeUser(function(user, done) {

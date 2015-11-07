@@ -1,0 +1,5 @@
+//should make a wager module that allows user to choose form a list of games
+//that have been created by the admin
+
+//consider having a games that automatically update weekly without admin input
+// //standard(automatic) and special(admin defined) games

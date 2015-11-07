@@ -1,0 +1,18 @@
+.nav.nav-tabs {
+  color: blue;
+
+}
+
+.tab-pane {
+
+
+}
+
+.tab-pane.active {
+
+}
+
+.tab-pane>p {
+  color: red;
+
+}

@@ -1,9 +1,6 @@
-//Handle posts to /makebet or whatever
-//the route is
 //The wager api should
-//1. first authenticate user
-//2. then parse the req for these params
-// -KISS-
+// //1. first authenticate user
+// //2. then parse the req for these params
 //  username or id, desired game(game id), desired ammount, ?desired format(paypal, skrill)?
 //  redirect to user
 

@@ -1,15 +1,21 @@
-//- send spinner before socket.io connection made
+//- The DOM is organized into page with class='page'
+//- Each page fills the entire screen
+//- For each page there is only one .inner element
+//- .box elements should be added to the .inner element
 extends layout
 block css
   link(href='/css/th.css' rel='stylesheet')
   link(href='css/index.css' rel='stylesheet')
-    
 block content
-  .pageOne
+  .page#pageOne
     .inner
-      a.btn(id='enter' href='enter' style='margin: 15px') Enter
-      a.btn(id='login' href='login') Login
-    .three#THREE 
+      a(id='enter' href='atrium') Enter
+      a.btn(id='login' href='login' style='margin: 15px') Login
+      a.btn(id='signup' href='signup' style='margin: 15px') Signup
+    .three#THREE
+  .footer
+    .inner
+      div Some Text 
   script(src='//cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.min.js')
   script(src='components/jquery/dist/jquery.min.js')
   script(src='//cdn.socket.io/socket.io-1.3.7.js')
@@ -18,7 +24,10 @@ block content
   script(src='components/angular/angular.min.js')
   //- script(src='js/tquery/tq.js')
   //- script(src='js/th/config.b.js')
-  script(src='js/index.js')
+  //- socket implementation in index.js
+  //- AKA BlizWow class
+  script(src='js/jq/blizzapi/blizzapi.js')
+  script(src='js/jq/index/index.js')
     //-       ' ' ' '
     //-       | | | |
     //-    @@@@@@@@@@@@@

@@ -1,0 +1,58 @@
+//- #create a container div and include this file
+//- .tabs(class='container')
+//- include ./tabs.jade
+
+ul(class='nav nav-tabs' role='tablist')
+  li.active
+    a(href='#A' role='tab' data-toggle='tab').
+      Tab A
+  li
+    a(href='#B' role='tab' data-toggle='tab').
+      Tab B
+  li
+    a(href='#C' role='tab' data-toggle='tab').
+      Tab C
+  li
+    a(href='#D' role='tab' data-toggle='tab').
+      Tab D
+
+ //- tab panes
+.tab-content
+  div(id='wow' class='tab-pane fade in active')
+    h1 WOW
+    p Append data here
+  div(id='lol' class='tab-pane fade')
+    h1 LOL
+    p Append data here
+  div(id='sc2' class='tab-pane fade')
+    h1 SC2
+    p Append data here
+  div(id='dblo' class='tab-pane fade')
+    h1 DBLO
+    p Append data here
+    
+style(type='text/css').
+  .nav.nav-tabs {
+    color: blue;``
+
+  }
+
+  .tab-pane {
+
+
+  }
+
+  .tab-pane.active {
+
+  }
+
+  .tab-pane>p {
+    color: red;
+
+  }
+
+  
+script(src='components/jquery/dist/jquery.min.js')      
+script(src='components/bootstrap/dist/js/bootstrap.min.js')
+script(src='js/jq/blizzapi/statstable.js')    
+    

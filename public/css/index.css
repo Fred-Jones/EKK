@@ -12,29 +12,44 @@
 body {
   color: black;
   }
-.pageOne {
+.page {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  width: 90vw;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   border: 2px solid blue;
+  }
+  .inner {
+    position: relative;
+    height: 99.4%;
+    width: 99.4%;
+    border: 2px dotted red;
+  }
+#pageOne {
 
 }
 
-.inner {
-  height: 20vh;
-  width: 90vw;
-  border: 2px dotted red;
-}
 .btn {
+  position: relative;
+  top: 24px;
+  float: right;
+  width: 43px;
   padding: 20px;
   border: 2px solid gray;
 }
 #enter {
-
+    position: relative;
+    top: 50%;
+    left: 46%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid red;
 }
 #login {
+}
+#signup {
 
 }
 
@@ -43,4 +58,10 @@ body {
   height: 69%;
   border: 2px dotted blue;
 
+}
+
+.footer {
+  width: 100vw;
+  height: 100px;
+  border: 2px dotted green;
 }

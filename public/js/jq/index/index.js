@@ -61,11 +61,12 @@ function returnelemlist(d, ps) {
 
   return prelist
 }
-function putthesekeysinthat(thesethings, that) {
+function putthesethingsinthat(thesethings, that) {
     var _that = []
     for(prop in thesethings){
-      that.push(prop)
+      _that.push(prop)
     }
+   return _that
 }
 // // end sc2profileprofile
 // END BLIZZSOCK FUNCTIONS
