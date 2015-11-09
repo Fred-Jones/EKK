@@ -37,7 +37,11 @@ function __isAuthenticated(req, res, next) {
   }
   next()
 }
-
+function __logout(req, res) {
+  console.log('__logout ', req.username)
+  req.logout()
+  res.redirect('/')
+}
 //handles the case of redirecting to user.public.js
 // function __userIsAuthenticated(req, res, next){
 //   console.log('User authed? ', req.isAuthenticated())
@@ -47,9 +51,3 @@ function __isAuthenticated(req, res, next) {
 //   }
 //   next()
 // }
-
-function __logout(req, res) {
-  console.log('__logout ', req.username)
-  req.logout()
-  res.redirect('/')
-}

@@ -2,7 +2,6 @@
 //module that suppports db updates etc.
 //when configured with the app
 //perhaps make a app.makePayment midware
-
 var Promise = require('promise')
 
 exports.config = function (pp, opt) {
@@ -24,7 +23,16 @@ exports.test_card = {
   "cvv2": "123",
   "first_name": "Joe",
   "last_name": "Shopper"
-};
+}
+exports.bad_test_card = {
+  "type": "visa",
+  "number": "44171196698hhhhh",
+  "expire_month": "11",
+  "expire_year": "2018",
+  "cvv2": "123",
+  "first_name": "Joe",
+  "last_name": "Shopper"
+}
 
 exports.test_config = {
   'mode': 'sandbox', //sandbox or live

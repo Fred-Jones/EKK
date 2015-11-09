@@ -7,7 +7,8 @@ block content
   .page(ng-app='pageApp')
     .inner
       .wager(ng-controller='wagerController')
-        div Make Wager 
+        input(id='rtext' type='text')
+        button(id='riotquery') 
         .modal
           form(role='form' action='/test_wager' method='POST') 
             input(name='gametype' type='text' value='wow' placeholder='Select Game')
@@ -22,13 +23,16 @@ block content
           p.fineprint This page only visible to the user
       .statstable(class='container')
         include ./statstable.jade
-      .contests
+      .contests(class='container')
+        include ./opengamestable.jade
+        style.
+          .contests{width:100%;}
         //- contests are rows of squares
         //- click a square to enter
           //- modal enter amount etc.
-  .footer
-    .inner
           
+  .footer
+    .inner None
 //- stlye.
 //-   .nav-tabs {
 //-     margin: 0;
@@ -54,6 +58,6 @@ block content
 //-       padding: 10px;
 //-   }          
 block body_scripts
+  script(src='js/jq/userprivate/riot.test.js')
   script(src='components/underscore/underscore-min.js')
   script(src='components/jquery/dist/jquery.min.js')
-  script(src='js/jq/userpivate/index.js')

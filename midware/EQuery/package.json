@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "curlrequest": "^0.5.3",
+    "request-promise": "^1.0.2"
+  }
+}

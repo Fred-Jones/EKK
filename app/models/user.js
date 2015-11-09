@@ -11,43 +11,63 @@ var userSchema = new Schema({
   },
   gameids: String,
   wagerids: String,
-  creditcard: {
-    type: String,
-    number: Number,
-    expiremonth: Number,
-    expireyear: Number,
-    cvv2: Number,
-    firstname: String,
-    lastname: String
-  },
+  creditcards:{},
   loginAttempts: { type: Number, required: true, default: 0 },
   lockUntil: { type: Number }
 })
+// creditcard:{
+//   type: String,
+//   number: Number,
+//   expiremonth: Number,
+//   expireyear: Number,
+//   cvv2: Number,
+//   firstname: String,
+//   lastname: String
+// }
 
 userSchema.pre('save', function (next) {
   var user = this
   // only hash the password if it has been modified (or is new)
-  if (!user.isModified('password')) return next();
+  if (!user.isModified('password')) {
+    return next();
+  }else{
+    bc.genSalt(10, function(err, salt) {
 
-  bc.genSalt(10, function(err, salt) {
-      if (err) return next(err);
-      //hash pwd
-      bc.hash(user.password, salt, function(err, hash) {
-          if (err) return next(err);
-          // override the cleartext password with the hashed one
-          user.password = hash;
-          next();
-      });
-  });
+        if (err) return next(err);
+        //hash pwd
+        bc.hash(user.password, salt, function(err, hash) {
+            if (err) return next(err);
+            // override the cleartext password with the hashed one
+            user.password = hash;
+            next();
+        });
+    });
+  }
+  // if(!user.isModified('creditcard')){
+  //   return next()
+  // }else{
+  //   bc.genSalt(10, function(err, salt) {
+  //     if (err) return next(err);
+  //     bc.hash(user.creditcard.number, salt, function(err, hash) {
+  //       if(err) return next(err);
+  //       user.creditcard.number = hash
+  //       next()
+  //     })
+  //   })
+  // }
 
 })
 
-// userSchema.methods.comparePassword = function(candidatePassword, userpassword, cb) {
-//     b.compare(candidatePassword, this.password, function(err, isMatch) {
+// userSchema.methods.comparePassword = function(candidatePassword, cb) {
+//     bc.compare(candidatePassword, this.password, function(err, isMatch) {
 //         if (err) return cb(err);
 //         cb(null, isMatch);
 //     });
-// };
+// }
+//
+// userSchema.methods.hasValidCard = function(callback) {
+//   console.log(this.username)
+// }
 // userSchema.statics.failedLogin = {
 //   NOT_FOND: 0,
 //   PASSWORD_INCORRECT: 1,

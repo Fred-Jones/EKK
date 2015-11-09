@@ -3,6 +3,7 @@ var LocalStrategy = require('passport-local').Strategy,
  OpenIDStrategy = require('passport-openid'),
  TwitterStrategy = require('passport-twitter');
 var User = require('../app/models/user.js');
+var bc = require('bcryptjs')
 
 module.exports = [
 //forEach() iterable object -> return new __Strategy()
@@ -11,11 +12,16 @@ module.exports = [
         if (err) { return done(err); }
         if (!user) {
           return done(null, false, { message: 'Incorrect username.' });
+          console.log(user, password)
         }
-        if (!(user.password == password)) {
+        //needs bcrypt
+        if (bc.compareSync(password, user.password)) {
+          console.log(user, password)
+          return done(null, user);
+        }else{
+          console.log(user, password)
           return done(null, false, { message: 'Incorrect password.' });
         }
-        return done(null, user);
       });
     }
   )//,

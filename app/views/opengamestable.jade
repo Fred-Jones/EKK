@@ -1,0 +1,53 @@
+ul(class='nav nav-tabs' role='tablist')
+  li.active
+    a(href='#wowx' role='tab' data-toggle='tab').
+      WOW
+  li
+    a(href='#lolx' role='tab' data-toggle='tab').
+      LOL
+  li
+    a(href='#sc2x' role='tab' data-toggle='tab').
+      SC2
+  li
+    a(href='#dblox' role='tab' data-toggle='tab').
+      DBLO
+
+ //- tab panes
+.tab-content
+  div(id='wowx' class='tab-pane fade in active')
+    h1 WOW
+    p Append wow here
+  div(id='lolx' class='tab-pane fade')
+    h1 LOL
+    p Append lol here
+  div(id='sc2x' class='tab-pane fade')
+    h1 SC2
+    p Append sc2 here
+  div(id='dblox' class='tab-pane fade')
+    h1 DBLO
+    p Append dblo here
+    
+style(type='text/css').
+  .nav.nav-tabs {
+    color: blue;``
+
+  }
+  .tab-pane {
+
+
+  }
+
+  .tab-pane.active {
+
+  }
+
+  .tab-pane>p {
+    color: red;
+
+  }
+
+  
+script(src='components/jquery/dist/jquery.min.js')      
+script(src='components/bootstrap/dist/js/bootstrap.min.js')
+script(src='js/jq/opengamestable/opengames.js')  
+  

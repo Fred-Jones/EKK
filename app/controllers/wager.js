@@ -1,3 +1,5 @@
+var User = require('../models/user.js')
+var bcrypt = require('bcryptjs')
 //The wager api should
 // //1. first authenticate user
 // //2. then parse the req for these params
@@ -20,12 +22,30 @@ paypal.config(pp, paypal.test_config)
 
 
 module.exports = function (app) {
-  // app.get('/test_wager', function(req, res) {
-  //   res.send('route setup for posts')
-  // })
-  app.get('/test_wager', app.makeTestPayment, function(req, res) {
-    console.log(req.msg)
-    res.render('index');
-  })
+  app.get('/test_wager', app.isAuthenticated,
+                         app.makeTestPayment,
+                         function(req,res) {
+                            res.redirect('/user')
+                          }
+  )
+  app.get('/makewager/:gameid', app.isAuthenticated,
+                                __canwager,
+                                __hasValidCard,
+                                function(req,res) {
+                                  res.send('can wager, has valid card')
+                                }
+  )
 
+}
+
+function __canwager(req, res, next) {
+  if(req.isAuthenticated()) {
+    next()
+  }else{
+    res.redirect('/login')
+  }
+}
+
+function __hasValidCard(req, res, next) {
+  next()
 }

@@ -3,7 +3,7 @@
 //      realtime betting
 //      send spinner from server to client, ajax on client side for blizzard
 //      query on index.jade
-//^      create data polling system using socket.io
+//      create data polling system using socket.io
 //      MLG.tv for streaming
 //      consider wager flow: select game -> staging -> commit -> success
 //        you will be notified of win/loss in your messages
@@ -11,12 +11,16 @@
 //      nodemailer confirm signup
 //      redis wager db
 // TODO
-//      Probably going to have to scrape lolesports.com
-//      http://matchhistory.na.leagueoflegends.com/en/#match-details/FRA1TMNT1/390112?gameHash=2006b43895063726&tab=overview
-//      Get riot games api-key
-//      make adding a game by admin accessible through a function
+//      adding a game should be accessible by admin from browser
 //      setup blizzard_api
+//      finish setup paypal_api
+//      finish riot api
+//        query is done
 //      setup game api and game db
+//      setup image hosting gridfs
+//      bcrypt passwords
+//        done?
+//      csurf needed? see note
 //      because of ratelimits, must host data pertainging to a game locally
 //      if the user is not logged in but navigating the site, should present signup link
 //      change file names there are like 10 user.js files
@@ -24,20 +28,10 @@
 //      finish socket
 //        socket is flimsy af with connections. HTTP better for homepage. Connect socket after user logs in
 //        just make socket a chat
-//      csurf needed? see note
-//      bcrypt passwords
-//      adding a game should be accessible by admin from browser
-//        ssl?
-//          ansible
-//        ppm on heroku for ssl, they are not cool with backdoors dont try
 //      ??move strategies.js to midware/passport ??
-//      finish setup paypal_api
-//      ^setup wager db
-//        no more wagers, just games
+//      make login & signup modals ... failure -> new page login
 //      https
 //        check note
-//      setup image hosting gridfs
-//      make login & signup modals ... failure -> new page login
 //      modal for free 'money' on first login after signup
 //      setup various AUTH schemas
 //        one midware function to rule them all...?
@@ -46,6 +40,9 @@
 //      PUSH HEROKU
 //      sick frontend
 //      adds?
+//       ssl?
+//          ansible
+//       ppm on heroku for ssl, they are not cool with backdoors dont try
 //
 
 var express = require('express'),
@@ -53,7 +50,7 @@ var express = require('express'),
   glob = require('glob'),
   mongoose = require('mongoose')
 mongoose.connect(config.db)
-var db = mongoose.connection;32
+var db = mongoose.connection;
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db)
 })
