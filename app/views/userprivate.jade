@@ -3,6 +3,8 @@ block css
   link(href='components/bootstrap/dist/css/bootstrap.css' rel='stylesheet')
   link(href='css/userprivate.css' rel='stylesheet')
 block head_script
+  script(src='components/underscore/underscore-min.js')
+  script(src='components/jquery/dist/jquery.min.js')
 block content
   .page(ng-app='pageApp')
     .inner
@@ -64,6 +66,5 @@ block content
 //-       padding: 10px;
 //-   }          
 block body_scripts
-  script(src='js/jq/userprivate/riot.test.js')
-  script(src='components/underscore/underscore-min.js')
-  script(src='components/jquery/dist/jquery.min.js')
+
+  

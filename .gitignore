@@ -10,5 +10,7 @@ note/*
 */*/.DS_Store
 public/img/*
 note/*
+test.*
+config/config.js
 public/js/ng/user/public/components/bootstrap/*
 public/js/ng/user/public/components/jquery/*

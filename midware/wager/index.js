@@ -1,9 +1,13 @@
 
-exports.hasValidCard = function(req_user, cb){
-  var uu = req_user
+exports.hasValidCard = function(game, req_user, cb){
+
 
 }
 
-exports.placeWager = function(requser, cb) {
+exports.placeWager = function(game, requser, cb) {
+
+}
+
+exports.newWager = function(game, wager, cb) {
 
 }

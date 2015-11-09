@@ -7,7 +7,11 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'dk'
+      name: 'dk',
+      admin: {
+        username: '',
+        password: ''
+      }
     },
     port: 3000,
     db: 'mongodb://localhost/dk-development',
