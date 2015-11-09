@@ -8,7 +8,13 @@ block content
     .inner
       .wager(ng-controller='wagerController')
         input(id='rtext' type='text')
-        button(id='riotquery') 
+        button(id='riotquery') Riot Query
+        br
+        .container
+          a(href='/user/addtestcard' class='col-sm-4') Add Test Card
+          a(href='makewager/ll' class='col-sm-4') Makewager/ll
+          a(href='signout' class='col-sm-4') Signout
+        
         .modal
           form(role='form' action='/test_wager' method='POST') 
             input(name='gametype' type='text' value='wow' placeholder='Select Game')
@@ -26,7 +32,7 @@ block content
       .contests(class='container')
         include ./opengamestable.jade
         style.
-          .contests{width:100%;}
+          .contests, .statstable{width:100%;}
         //- contests are rows of squares
         //- click a square to enter
           //- modal enter amount etc.

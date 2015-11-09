@@ -66,11 +66,47 @@ var sock = require('./midware/io/socket_test.js')(app, config)
 
 
 //DB SEEDS
-// var game = new Object()
-// game.opts = {}
-// game.semila = require('./app/models/game.semilla.js')()
+var game = new Object()
+game.opts = {
+ meta:{
+   category: 'test',
+   datecreated: (new Date()).toString(),
+   idwhocreated: 'ElDon',
+   description: 'test game'
+ },
+ parameters: {
+   dateopen: (new Date()).toString(),
+   dateclose: '+10d',
+   currency: 'us',
+   pot: '100.00',
+   winners: {
+     numberwinners: 1
+   },
+   players: 'ElDon'
+ }
+}
+game.semila = require('./app/models/game.semilla.js')(game.opts)
 
-
+//
+// name: String,
+// meta: {
+//   category: String, //wow, sc2, etc.
+//   datecreated: String,
+//   idwhocreated: String,
+//   description: String
+// },
+// parameters: {
+//   dateopen: String,
+//   dateclose: String,
+//   pot: String,
+//   winners: {
+//     numberwinners: Number, //number of winners possible ie top 3
+//     //consider implementing as an Object where ''
+//     ids: Array, //an array of user IDs. winners.ids[0] == top prize
+//     payout: Array //an array of prize money indexed the same as winners.ids
+//   },
+// players: Object // 'userid':'ante'
+// }
 
 /* mucho brillo mucho flow mucha torta
 

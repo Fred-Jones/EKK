@@ -34,7 +34,7 @@ function main() {
     //this is literally constructing a character
     var d = dt
     var props = []
-    putthesekeysinthat(d, props)//array of d's keys
+    putthesethingsinthat(d, props)//array of d's keys
     var elemlist = returnelemlist(d, props)
 
 

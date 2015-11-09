@@ -1,5 +1,3 @@
-var User = require('../models/user.js')
-var bcrypt = require('bcryptjs')
 //The wager api should
 // //1. first authenticate user
 // //2. then parse the req for these params
@@ -7,8 +5,6 @@ var bcrypt = require('bcryptjs')
 //  redirect to user
 
 // var wagerApi = '../../midware/wager/<wager.js>');
-var pp = require('paypal-rest-sdk')
-var paypal = require('../../midware/payments/paypal/paypal.js')//path to paypal config
 //paypal.config() = func(pp, opt)
 //opt = {
 //  String:String
@@ -17,8 +13,12 @@ var paypal = require('../../midware/payments/paypal/paypal.js')//path to paypal 
 //
 //}
 //??should include app.ppOpts property???
+var User = require('../models/user.js')
+var bcrypt = require('bcryptjs')
+var pp = require('paypal-rest-sdk')
+var paypal = require('../../midware/payments/paypal/paypal.js')//path to paypal config
 paypal.config(pp, paypal.test_config)
-//var User = require('../models/user.js')
+var User = require('../models/user.js')
 
 
 module.exports = function (app) {

@@ -8,4 +8,5 @@ module.exports = function(app) {
       res.redirect('/user')
     })
     app.get('/logout', app.logout)
+    app.get('/signout', app.logout)
 };

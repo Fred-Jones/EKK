@@ -1,19 +1,21 @@
 //1.should expose the model for the wager collection
 //2.each wager should contain date, who created,
 //3.a new game model should be created for each CATEGORY of blizzard game
+var gameSemilla = require('./game.semilla.js')
 var mongoose = require('mongoose')
 var simpleGameSchema = new mongoose.Schema({
-  gameid: Number,
+  name: String,
   meta: {
     category: String, //wow, sc2, etc.
     datecreated: String,
     idwhocreated: String,
-    dateopen: String,
-    dateclose: String,
-    description: String
+    description: String,
+    currency: String
   },
   parameters: {
-    pot: Number,
+    dateopen: String,
+    dateclose: String,
+    pot: String,
     winners: {
       numberwinners: Number, //number of winners possible ie top 3
       //consider implementing as an Object where ''
@@ -24,4 +26,4 @@ var simpleGameSchema = new mongoose.Schema({
   }
 })
 
-exports.simpleGameSchema = mongoose.model('game', simpleGameSchema)
+module.exports = mongoose.model('game', simpleGameSchema)
