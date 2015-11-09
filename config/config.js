@@ -13,9 +13,9 @@ var config = {
     db: 'mongodb://localhost/dk-development',
     mid: {
       riot:{
-        apikey: '7373751d-df26-46a0-90ae-82037012187a',
+        apikey: 'key',
         username: 'ElPatroncito',
-        email: 'mmaammbbuu@gmail.com',
+        email: 'mm',
         constraints: {
           ratelimits: ['500 requests every 10 minutes', '10 requests every 10 seconds']
         }
