@@ -11,11 +11,13 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
 module.exports = function (app) {
   app.login = __login
   app.isAuthenticated = __isAuthenticated
   app.logout = __logout
 }
+
 function __login(req, res, next) {
   passport.authenticate(req.body.authtype, {
     session: true

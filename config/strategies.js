@@ -4,6 +4,7 @@ var LocalStrategy = require('passport-local').Strategy,
  TwitterStrategy = require('passport-twitter');
 var User = require('../app/models/user.js');
 var bc = require('bcryptjs')
+// var adminbc = require('../app/models/user\.admin\.semilla\.js')
 
 module.exports = [
 //forEach() iterable object -> return new __Strategy()
@@ -12,15 +13,15 @@ module.exports = [
         if (err) { return done(err); }
         if (!user) {
           return done(null, false, { message: 'Incorrect username.' });
-          console.log(user, password)
+          console.log('user not found', user, password)
         }
         //needs bcrypt
         if (bc.compareSync(password, user.password)) {
           console.log(user, password)
           return done(null, user);
         }else{
-          console.log(user, password)
-          return done(null, false, { message: 'Incorrect password.' });
+            console.log('ERROR--\n',user, password)
+            return done(null, false, { message: 'Incorrect password.' });
         }
       });
     }

@@ -1,3 +1,4 @@
+console.log('Son cientoipico\nestamoen puertorico esa la marca\npakel rostro t kede bonito')
 // var app = angular.module('loginModule')
 // app.controller('loginController', function ($scope, $http){
 //   console.log($scope, $http)

@@ -2,7 +2,7 @@ extends layout
 block css
   link(href='css/signup.css' rel='stylesheet')
 block content
-  .signup.jubotron.text-center
+  .signup.jumbotron.text-center
     h1:span.fa.fa-lock Signup
   form(action='/signup' method='POST') 
     input(name='authtype' type='text' value='local')

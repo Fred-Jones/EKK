@@ -1,4 +1,3 @@
-//reference http://devsmash.com/blog/password-authentication-with-mongoose-and-bcrypt
 var bc = require('bcryptjs')
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -7,10 +6,8 @@ var userSchema = new Schema({
   email: String,
   password: String,
   profile: {
-    profpic: String
+    profilepic: String
   },
-  gameids: String,
-  wagerids: String,
   creditcards:{},
   loginAttempts: { type: Number, required: true, default: 0 },
   lockUntil: { type: Number }
@@ -43,19 +40,6 @@ userSchema.pre('save', function (next) {
         });
     });
   }
-  // if(!user.isModified('creditcard')){
-  //   return next()
-  // }else{
-  //   bc.genSalt(10, function(err, salt) {
-  //     if (err) return next(err);
-  //     bc.hash(user.creditcard.number, salt, function(err, hash) {
-  //       if(err) return next(err);
-  //       user.creditcard.number = hash
-  //       next()
-  //     })
-  //   })
-  // }
-
 })
 
 // userSchema.methods.comparePassword = function(candidatePassword, cb) {
@@ -74,4 +58,4 @@ userSchema.pre('save', function (next) {
 //   MAX_ATTEMPTS: 2
 // }
 
-module.exports = mongoose.model('user', userSchema)
+module.exports = mongoose.model('User', userSchema)

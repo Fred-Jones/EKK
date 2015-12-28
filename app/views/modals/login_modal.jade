@@ -1,0 +1,32 @@
+//- the script in this file **WILL HIDE THE MODAL**
+//- to use, include this file
+//- .show() the div when you want 
+extends ./modal_layout
+block modal_content
+  .modal.fade.loginmodal#loginmodal(tabindex='-1' role='dialog' aria-labelledby="loginmodallabel")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal' aria-label='close')
+            span(aria-hidden='true') &times;
+          h4.modal-title(id='loginmodallabel') Signup
+        .modal-body
+          form
+            .form-group
+              label(for='email') Email address
+              input#email.form-control(type='email', placeholder='Email')
+            .form-group
+              label(for='password') Password
+              input#password.form-control(type='password', placeholder='Password')
+            .checkbox
+              label
+                input(type='checkbox')
+            button.btn.btn-default(type='submit') Submit
+        .modal-footer
+          .description. Description here
+block scripts
+  script(type='text/javascript').
+    $('#login').click(function() {
+      $('#signupmodal').modal({keyboard: true, show: true, backdrop: true})
+      console.log('modalling')
+    })

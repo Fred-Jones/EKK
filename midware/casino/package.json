@@ -1,0 +1,19 @@
+{
+  "name": "casino",
+  "version": "0.1.0",
+  "description": "casino module for EK site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "casino",
+    "bet",
+    "betting",
+    "wager",
+    "gamble",
+    "gambling"
+  ],
+  "author": "DonClaudio",
+  "license": "ISC"
+}}

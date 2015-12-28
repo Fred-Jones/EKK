@@ -14,7 +14,7 @@ var config = {
       }
     },
     port: 3000,
-    db: 'mongodb://localhost/dk-development',
+    db: 'mongodb://localhost/EKK-development',
     mid: {
       riot:{
         apikey: 'key',
@@ -25,8 +25,9 @@ var config = {
         }
       },
       blizz: {
-        apikey: '',
-        username: 'ElPatron'
+        apikey: 'jjkskun6dp6h4pj36j6x3vemz6bbf7an',
+        username: 'DonJulian',
+        email: 'mmaammmbbuu@gmail.com'
       }
     }
   },

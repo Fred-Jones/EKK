@@ -1,8 +1,5 @@
 // IDEA
-//      web-socket
 //      realtime betting
-//      send spinner from server to client, ajax on client side for blizzard
-//      query on index.jade
 //      create data polling system using socket.io
 //      MLG.tv for streaming
 //      consider wager flow: select game -> staging -> commit -> success
@@ -10,8 +7,16 @@
 //        email option
 //      nodemailer confirm signup
 //      redis wager db
-// TODO
 //      adding a game should be accessible by admin from browser
+// TODO
+//      *** get a xbox live acct to sign up for bungee api*** -> acct email is mambu
+//        BUNGIE: https://www.bungie.net/en-US/User/API
+//        GENERAL XBOXLIVE API: https://www.xboxleaders.com/
+//        BATTLEFIELD: http://bfbcs.com/api
+//        HALO 5(beta): https://www.halowaypoint.com/en-us/developers
+//      change CDNs to bower components (for whatever reason, the comp dir does not showup in atom dir tree)
+//      *ADMIN PWD IS CLEARTEXT IN USER.ADMIN.SEMILLA.JS*
+//        Create command line utility -> upon startup, create admin account
 //      setup blizzard_api
 //      finish setup paypal_api
 //      finish riot api
@@ -65,28 +70,33 @@ require('./config/express')(app, config)
 var sock = require('./midware/io/socket_test.js')(app, config)
 
 
-//DB SEEDS
-var game = new Object()
-game.opts = {
- meta:{
-   category: 'test',
-   datecreated: (new Date()).toString(),
-   idwhocreated: 'ElDon',
-   description: 'test game'
- },
- parameters: {
-   dateopen: (new Date()).toString(),
-   dateclose: '+10d',
-   currency: 'us',
-   pot: '100.00',
-   winners: {
-     numberwinners: 1
-   },
-   players: 'ElDon'
- }
-}
-game.semila = require('./app/models/game.semilla.js')(game.opts)
+// // DB SEEDS
+// Admin seed
+var adminSemilla = require('./app/models/user.admin.semilla.js')
 
+
+// var game = new Object()
+// game.opts = {
+//  meta:{
+//    category: 'test',
+//    datecreated: (new Date()).toString(),
+//    idwhocreated: 'ElDon',
+//    description: 'test game'
+//  },
+//  parameters: {
+//    dateopen: (new Date()).toString(),
+//    dateclose: '+10d',
+//    currency: 'us',
+//    pot: '100.00',
+//    winners: {
+//      numberwinners: 1
+//    },
+//    players: 'ElDon'
+//  }
+// }
+// game.semila = require('./app/models/game.semilla.js')(game.opts)
+
+// // END DB SEEDS
 //
 // name: String,
 // meta: {

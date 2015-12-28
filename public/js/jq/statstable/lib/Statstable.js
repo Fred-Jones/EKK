@@ -1,5 +1,6 @@
 function Statstable() {
 
+  this.response
 }
 //set up stats table constructor with method for init with
 //default data
@@ -18,12 +19,3 @@ Statstable.prototype.initWithTestData = function(game) {
 for (m in methods){
   Statstable.prototype[m] = methods[m]
 }
-
-
-
-
-//TESTS
-//working
-var st = new Statstable()
-console.log(st)
-st.localRiotQuery()

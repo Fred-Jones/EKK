@@ -7,7 +7,7 @@ module.exports = function(app) {
 
     res.send('passed is admin')
   })
-  app.post('/g/addgame', app.isAuthenticated,__isAdmin, function(req, res, next) {
+  app.post('/g/addgame', app.isAuthenticated, __isAdmin, function(req, res, next) {
 
   })
 }

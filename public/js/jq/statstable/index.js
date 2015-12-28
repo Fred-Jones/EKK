@@ -3,10 +3,9 @@
 //  2b) Else set properties of stats_table to the desired dom elements with data
 $(document).ready(statstable_Main)
 function statstable_Main() {
-  var stbl = document.getElementsByClassName('.statstable')
-  if (!stbl) {
-    console.log('No stats table')
-    //append new Statstable().initWithTesttData
-  }
-
+  //TESTS
+  var $lol = $('#lol')
+  var st = new Statstable()
+  console.log(st)
+  $lol.append(st.localRiotQuery()) //GOOD
 }

@@ -1,0 +1,37 @@
+
+//- !!! MUST INCLUDE JS TO SHOW MODAL !!!
+
+extends modal_layout
+block modal_content
+  .modal.fade.signupmodal#signupmodal(tabindex='-1' role='dialog' aria-labelledby="signupmodallabel")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button' data-dismiss='modal' aria-label='close')
+            span(aria-hidden='true') &times;
+          h4.modal-title(id='signupmodallabel') Signup
+        .modal-body
+          form
+            .form-group
+              label(for='username') Username
+              input#username.form-control(type='username', placeholder='Username')
+            .form-group
+              label(for='email') Email address
+              input#email.form-control(type='email', placeholder='Email')
+            .form-group
+              label(for='password') Password
+              input#password.form-control(type='password', placeholder='Password')
+            .checkbox
+              label
+                input(type='checkbox')
+            button.btn.btn-default(type='submit') Submit
+        .modal-footer
+          .description. Description here
+    
+block scripts
+script(type='text/javascript').
+  $('#signup').click(function() {
+    $('#signupmodal').modal({keyboard: true, show: true, backdrop: true})
+    console.log('modalling')
+  })
+  

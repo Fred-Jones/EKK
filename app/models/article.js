@@ -15,5 +15,5 @@ ArticleSchema.virtual('date')
   });
 module.exports = mongoose.model('article', ArticleSchema);
 
-var plantarSemilla = require('./article.semilla.js')
-plantarSemilla({title:"semilla", url:"www.google.com", text: "La semilla que no ne crece"});
+// var plantarSemilla = require('./article.semilla.js')
+// plantarSemilla({title:"semilla", url:"www.google.com", text: "La semilla que no ne crece"});

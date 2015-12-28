@@ -1,15 +1,15 @@
 
-//                   //##VINIMO DE PORTORRO TENEMO LA SANGRE##//
- // 6MMMMb/           |\dM      |\MM      |\`MM'`MMMMMMMMM `MM\     `M'MMMMMMMMMM `MMMMMMMMM
- //  |\8P |\YM        |\MMb      |\MM      |\MM  MM      \  MMM\     M /   MM   \  MM      \
- //   |\6M   |\Y      |\d'YM      |\MM      |\MM  MM         M\MM\    M     MM      MM
- //    |\MM           |\P `|\Mb    |\MM      |\MM  MM    ,    M \MM\   M     MM      MM    ,
- //     |\MM          |\d'  |\YM    |\MM      |\MM  MMMMMMM    M  \MM\  M     MM      MMMMMMM
- //      |\MM         |\P    |\Mb    |\MM      |\MM  MM    `    M   \MM\ M     MM      MM    `
- //       |\MM        |\d'     |\YM   |\MM      |\MM  MM         M    \MM\M     MM      MM
- //        |\YM   |\6 |\MMMMMMMM|\bYM  |\MM      |\MM  MM         M     \MMM     MM      MM
- //         |\8b  |\d9|\d'       |\YM   |\MM      |\MM  MM      /  M      \MM     MM      MM      /
- //          |\YMMMM9 |\dM_       |\_dMM__|\MMMMMMM _|\MM__MMMMMMMMM _M_      \M    _MM_    _MMMMMMMMM
+//                 //## OYE VINIMO DE PORTORRO TENEMO LA SANGRE ##//
+ // |\6MMMMb\|        |\dM      |\MM     |\`MM'`MMMMMMMMM `MM\     `M'MMMMMMMMMM `MMMMMMMMM
+ //  |\8P |\YM\       |\MMb      |\MM      |\MM  MM      \  MMM\     M /   MM   \ \MM
+ //   |\6M   |\Y      |\d'YM      |\MM      |\MM  MM         M\MM\    M     MM     \MM
+ //    |\MM           |\P `|\Mb    |\MM      |\MM  MM         M \MM\   M     MM     \MM
+ //     |\MM          |\d'  |\YM    |\MM      |\MM  MMMMMMM    M  \MM\  M     MM     \MMMMMMM
+ //      |\MM         |\P    |\Mb    |\MM      |\MM  MM         M   \MM\ M     MM     \MM
+ //       |\MM        |\d'     |\YM   |\MM      |\MM  MM         M    \MM\M     MM     \MM
+ //        |\YM   |\6 |\MMMMMMMM|\bYM  |\MM      |\MM  MM         M     \MMM     MM     \MM
+ //         |\8b  |\d9|\d'       |\YM   |\MM      |\MM  MM         M      \MM     MM     \MM
+ //          |\YMMMM9 |\dM_       |\_dMM__|\MMMMMMM _|\MM__MMMMMMMMM _M_    \M    _MM_    _MMMMMMMMM
 
 var express = require('express');
 var session =require('express-session');

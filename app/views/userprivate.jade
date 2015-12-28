@@ -13,9 +13,11 @@ block content
         button(id='riotquery') Riot Query
         br
         .container
-          a(href='/user/addtestcard' class='col-sm-4') Add Test Card
-          a(href='makewager/ll' class='col-sm-4') Makewager/ll
-          a(href='signout' class='col-sm-4') Signout
+          a(href='/user/addcard' class='col-sm-2.4') Add Credit Card
+          a(href='/user/addtestcard' class='col-sm-2.4') Add Test Card
+          a(href='makewager/ll' class='col-sm-2.4') Makewager/ll
+          a(href='')
+          a(href='signout' class='col-sm-2.4') Signout
         
         .modal
           form(role='form' action='/test_wager' method='POST') 
@@ -41,30 +43,40 @@ block content
           
   .footer
     .inner None
-//- stlye.
-//-   .nav-tabs {
-//-     margin: 0;
-//-     padding: 0;
-//-     border: 0;    
-//-   }
-//-   .nav-tabs > li > a {
-//-       background: #DADADA;
-//-       border-radius: 0;
-//-       box-shadow: inset 0 -8px 7px -9px rgba(0,0,0,.4),-2px -2px 5px -2px rgba(0,0,0,.4);
-//-   }
-//-   .nav-tabs > li.active > a,
-//-   .nav-tabs > li.active > a:hover {
-//-       background: #F5F5F5;
-//-       box-shadow: inset 0 0 0 0 rgba(0,0,0,.4),-2px -3px 5px -2px rgba(0,0,0,.4);
-//-   }
-//- 
-//-   .tab-pane {
-//-       background: #F5F5F5;
-//-       box-shadow: 0 0 4px rgba(0,0,0,.4);
-//-       border-radius: 0;
-//-       text-align: center;
-//-       padding: 10px;
-//-   }          
+          
 block body_scripts
+
+style(type='text/css').
+  @media screen and (max-width: 500px) {
+    body {
+      color: blue;
+    }
+
+  }
+
+  body {
+  }
+  .page {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid red;
+
+  }
+  .inner {
+    width: 100%;
+    height: 100%;
+    border: 2px dotted black;
+
+  }
+
+  .user {
+
+  }
+
+  #pic {
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+  }
 
   

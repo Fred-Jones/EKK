@@ -3,6 +3,7 @@ var bw = new BlizzWow()
 
 $(document).ready(main)
 function main() {
+  
   //http blizz query
   // bw.getRegionLeaderboard(function(err, dt) {
   //   console.log(dt)

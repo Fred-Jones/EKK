@@ -6,47 +6,60 @@
 @media screen and (max-width: 500px) {
   a {
     color: blue;
-
   }
+}
+.font{
+  font-family: 'Slabo 27px', serif;
+}
+.font.thick{
+  /*normal weight*/
+}
+.font.skinny{
+  font-weight:lighter;
 }
 body {
   color: black;
+  margin: 0px;
   }
 .page {
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
   width: 100vw;
   height: 100vh;
   border: 2px solid blue;
   }
-  .inner {
+.inner {
     position: relative;
     height: 99.4%;
     width: 99.4%;
     border: 2px dotted red;
   }
-#pageOne {
-
+#pageOne > .inner {
+  background-image: url('/img/dragonslayer-pantheon-lol-hd-1920x1080.jpg');
+  overflow: hidden;
 }
 
 .btn {
   position: relative;
   top: 24px;
   float: right;
-  width: 43px;
-  padding: 20px;
+  width: 5em;
+  padding: 10px;
   border: 2px solid gray;
+  text-align: center;
+  text-decoration: none;
 }
 #enter {
-    position: relative;
-    top: 50%;
-    left: 46%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid red;
+  position: relative;
+  top: 50%;
+  left: 41%;
+  padding: 20px 50px 20px 50px;
+  margin-left:auto;
+  margin-right:auto;
+  width: 20em;
+  height: 20em;
+  border: 2px solid red;
 }
+
 #login {
 }
 #signup {
