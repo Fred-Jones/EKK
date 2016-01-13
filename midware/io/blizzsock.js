@@ -1,5 +1,4 @@
-//this.apikey = 'uqtddrzuw8zuczzagfwy9bvxbh78ghgn'
-//this.secret = '2C4AXFPDqU2eKwZmWnZQEFjXXN3XkybN'
+
 var r = require('request')
 var bnet = require('battlenet-api')('uqtddrzuw8zuczzagfwy9bvxbh78ghgn')
 var Promise = require('promise')
